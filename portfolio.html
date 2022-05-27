@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family: 'Roboto Flex', sans-serif;
+        }
+        #shot{
+            font-size: 4rem;
+            color: #071654;
+            text-align: center;
+            padding: 30px 40px;
+        }
+        .secondary {
+            font-size: 5rem;
+            color: yellow;
+        }
+
+        .tertiary {
+            font-size: 3rem;
+        }
+
+        .btn {
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+            display: block;
+            font-size: 0.8rem;
+            width: 128px;
+            height: 40px;
+            margin-top: 40px;
+            align-items: center;
+            justify-items: center;
+            background-color: rgb(219, 219, 13);
+        }
+
+        .btn:hover {
+            background-color: rgb(190, 190, 2);
+            color: white;
+            opacity: 1.11;
+            border: 2px solid white;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: rgb(241, 197, 21);
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        /* Intro */
+        #intro {
+            height: 550px;
+            padding-top: 80px;
+            color: white !important;
+        }
+
+        #intro::before {
+            background-color: black;
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1621610085923-4e8234a10784?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 660px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: -1;
+            opacity: 1.89;
+        }
+
+        #intro p {
+            margin: 30px 0px;
+        }
+
+        #intro-box {
+            position: absolute;
+            top: 170px;
+            left: 200px;
+            width: 55%;
+        }
+        @media screen and (max-width: 1060px) {
+            #intro-box{
+                left: 100px;
+            }
+        }
+
+        /* About */
+
+        #about {
+            height: 700px;
+        }
+
+        #dbl-wrapper {
+            display: flex;
+        }
+        @media screen and (max-width: 800px) {
+            #dbl-wrapper {
+                flex-direction: column;
+            }
+            #abt-cont{
+                margin-top: 150px;
+                padding: 40px;
+            }
+            #img2, #img3{
+                visibility: hidden;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            #intro-box{
+                left: 35px;
+            }
+        }
+
+        #about p {
+            color: black !important;
+        }
+        @media screen and (max-width: 1350px){
+            #details::before{
+                top: 5600px;
+            }
+        }
+        #about h2,
+        #skills h1,
+        #details h1 {
+            margin-top: 100px;
+            padding-top: 40px;
+            padding-left: 100px;
+            font-size: 3.5rem;
+            color: rgb(3, 3, 89);
+            padding-bottom: 40px;
+        }
+        .about-img img {
+            display: block;
+        }
+
+        #img-1 img {
+            width: 400px;
+        }
+
+        #img-2 img {
+            width: 270px;
+            -webkit-filter: drop-shadow(5px 5px 5px #fff8f8);
+            filter: drop-shadow(15px 15px -15px #ffffff);
+        }
+
+        #img-3 img {
+            width: 140px;
+        }
+
+        #abt-wrapper {
+            padding-left: 100px;
+            padding-right: 30px;
+        }
+
+        #img-2 {
+            position: absolute;
+            top: 1140px;
+            left: 80px;
+        }
+
+        #img-3 {
+            position: absolute;
+            top: 1160px;
+            left: 370px;
+        }
+
+        /* projects Container */
+        #projects-container p,
+        #projects-container h3 {
+            color: black;
+            padding-top: 30px;
+        }
+
+        .items p {
+            width: 280px;
+        }
+
+        #projects-obj {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
+            grid-auto-rows: minmax(327px, auto);
+            grid-auto-columns: minmax(415px, auto);
+            column-gap: 52px;
+            row-gap: 38px;
+            padding: 103px 89px;
+            margin-bottom: 0px;
+        }
+
+        .image {
+            position: relative;
+            width: 280px;
+        }
+
+        .image__img {
+            display: block;
+            width: 280px;
+        }
+
+        .image__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .image__overlay--blur {
+            backdrop-filter: blur(5px);
+        }
+
+        .image__overlay--primary {
+            background: #000000;
+        }
+
+        .image__overlay>* {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+
+        .image__overlay:hover {
+            opacity: 0.89;
+        }
+
+        .image__overlay:hover>* {
+            transform: translateY(0);
+        }
+
+        .image__title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .image__description {
+            font-size: 1em;
+            margin-top: 0.25em;
+        }
+
+        .items {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #projects-container {
+            background-color: rgb(246, 246, 246);
+        }
+
+        #projects-container h1 {
+            text-align: center;
+            color: rgb(9, 9, 100);
+            font-size: 3rem;
+            padding-top: 100px;
+        }
+
+        #projects-container>p {
+            text-align: center;
+        }
+
+        hr {
+            margin: auto;
+            size: 3;
+            width: 10%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #skills h2,
+        #skills h1 {
+            color: black;
+        }
+
+        .boxes {
+            display: flex;
+            margin: 20px 0px;
+        }
+
+        .rect {
+            width: 200px;
+            height: 20px;
+            background-color: yellow;
+        }
+
+        .wrapper {
+            width: 300px;
+            height: 21px;
+            border: 0.001px solid rgb(255, 225, 28);
+        }
+
+        #rect1 {
+            width: 210px;
+        }
+
+        #rect2 {
+            width: 240px;
+        }
+
+        #rect3 {
+            width: 150px;
+        }
+
+        #rect6 {
+            width: 120px;
+        }
+
+        #rect4 {
+            width: 240px;
+        }
+
+        #rect5 {
+            width: 270px;
+        }
+
+        #skills h2 {
+            width: 300px;
+        }
+
+        #skills .boxes {
+            padding: 0px 100px;
+        }
+
+        .cboxes {
+            display: flex;
+            margin: 30px 100px;
+            margin-top: 10px;
+        }
+
+        #details h1,
+        #details p,
+        #details h3 {
+            color: white;
+        }
+
+        #details h3 {
+            padding-left: 100px;
+        }
+
+        #details p {
+            padding-top: 10px;
+        }
+
+        .cboxes img {
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding-right: 40px;
+        }
+
+        #details h1,
+        #skills h1 {
+            color: rgb(7, 7, 55);
+        }
+
+        #details h1 {
+            color: rgb(232, 232, 238);
+        }
+
+        #details {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        #details::before {
+            background-color: black;
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1512428559087-560fa5ceab42?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 900px;
+            top: 4200px;
+            left: 0px;
+            width: 100%;
+            z-index: -1;
+            opacity: 1.89;
+        }
+
+        .showSlide {
+            display: none
+        }
+
+        .showSlide img {
+            width: 100%;
+        }
+
+        #slidercontainer {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .left,
+        .right {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .right {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .left:hover,
+        .right:hover {
+            background-color: rgba(115, 115, 115, 0.8);
+        }
+
+        .content {
+            color: #eff5d4;
+            font-size: 30px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @media screen and (max-width: 1330px) {
+            #details::before {
+                top: 3500px;
+                height: 1200px;
+            }
+        }
+
+        @media screen and (max-width: 1330px) {
+            #about {
+                flex-direction: row;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects-container">Projects</a>
+        <a href="#details">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div id="intro">
+        <div id="intro-box">
+            <h3 class="tertiary">I'm Arpana Sharma</h3>
+            <h2 class="secondary">Web Developer</h2>
+            <p>Make Website with basic functionality and aesthetic meet. The designs will simply blow your mind.
+            </p>
+            <button class="btn" id="mybutton"><a href="https://github.com/Arpana-Sharma" target="_blank">Github
+                    Profile</a>
+            </button>
+        </div>
+    </div>
+    <div id="about">
+        <h2>ABOUT ME</h2>
+        <div id="dbl-wrapper">
+            <div id="abt-wrapper">
+                <div class="about-img" id="img-1"><img src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870" alt=""></div>
+                <div class="about-img" id="img-2"><img
+                        src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774"
+                        alt=""></div>
+                <div class="about-img" id="img-3"><img
+                        src="https://images.unsplash.com/photo-1499914485622-a88fac536970?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                        alt="">
+                </div>
+            </div>
+            <div id="abt-cont">
+                <p>
+                    Currently studying in IIT Roorkee in civil engineering branch but interested in web development and
+                    coding stuff. I had done basic and mini projects in web development. I am also interested in machine
+                    learning and explored python to much extent. Apart from that my hobbies includes drawing and
+                    painting, art and craft, singing, playing games, traveling etc.
+                </p>
+                <button class="btn" id="abt-btn">
+                    <a href="https://github.com/Arpana-Sharma/IPL" target="_blank">View
+                        Best Work
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="skills">
+        <h1>SKILLS</h1>
+        <div class="boxes" id="box1">
+            <h2>HTML</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect1"></div>
+            </div>
+        </div>
+        <div class="boxes" id="box2">
+            <h2>CSS</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect2"></div>
+            </div>
+        </div>
+        <div class="boxes" id="box3">
+            <h2>JavaScript</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect3"></div>
+            </div>
+        </div>
+        <div class="boxes" id="box4">
+            <h2>MySQL</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect4"></div>
+            </div>
+        </div>
+        <div class="boxes" id="box5">
+            <h2>Python</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect5"></div>
+            </div>
+        </div>
+        <div class="boxes" id="box6">
+            <h2>MongoDb</h2>
+            <div class="wrapper">
+                <div class="rect" id="rect6"></div>
+            </div>
+        </div>
+    </div>
+    <div id="projects-container">
+        <h1>Recent Projects</h1>
+        <hr size="3" margin="auto" width="10%" color="yellow">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Ratione doloribus</p>
+        <div id="projects-obj">
+            <div class="items" id="cont1">
+                <a href="https://github.com/Arpana-Sharma/Game-of-Dice" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1569605612461-7ad0dbe3ef4c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Dice Game</h3>
+                <p>It is a game in which 2 players are there and by clicking a button, die is thrown and the person
+                    whose die shows greater number wins the game. Players can play any number of times they wants to
+                    play.
+                </p>
+            </div>
+            <div class="items" id="cont2">
+                <a href="https://github.com/Arpana-Sharma/Weather-API-" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1592210454359-9043f067919b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Weather App using API</h3>
+                <p>In this website, the current weather conditions of Mumbai is shown by fetching data from Google API
+                    and the data is displayed.
+                </p>
+            </div>
+            <div class="items" id="cont3">
+                <a href="https://github.com/Arpana-Sharma/IPL" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Cricket Website</h3>
+                <p>A commercial cricket website which shows details of teams as well as details of players by fetching
+                    data from a JSON file. It also shows the top players performance.
+                </p>
+            </div>
+            <div class="items" id="cont4">
+                <a href="https://github.com/Arpana-Sharma/Blog_Website" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Blog Website</h3>
+                <p>It shows blogs of different persons. A person can add its blog to the website after sing in and can
+                    edit blogs also.
+                </p>
+            </div>
+            <div class="items" id="cont5">
+                <a href="https://github.com/Arpama-Sharma/Restaraunt-Website" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Restaurant Website</h3>
+                <p>It is the commercial website of a restaurant. It shows the details and speciality of the restaurant
+                    and menu details as well as contact details.
+                </p>
+            </div>
+            <div class="items" id="cont6">
+                <a href="https://github.com/Arpana-Sharma/Car_Project" target="_blank">
+                    <div class="image">
+                        <img class="image__img"
+                            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870"
+                            alt="">
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__title">Click</div>
+                        </div>
+                    </div>
+                </a>
+                <h3>Car Website</h3>
+                <p>It is the website to display motorsports car and its information
+                </p>
+            </div>
+        </div>
+    </div>
+    <h1 id = "shot">PICTURES OF MY PROJECT</h1>
+    <div id="slidercontainer">
+        <div class="showSlide fade">
+            <img src="Screenshot (62).png" />
+            <div class="content">Car Project</div>
+        </div>
+        <div class="showSlide fade">
+            <img src="Screenshot (64).png" />
+            <div class="content">Cricket</div>
+        </div>
+        <div class="showSlide fade">
+            <img src="Screenshot (63).png" />
+            <div class="content">Blog App</div>
+        </div>
+        <!-- Navigation arrows -->
+        <a class="left" onclick="nextSlide(-1)">❮</a>
+        <a class="right" onclick="nextSlide(1)">❯</a>
+    </div>
+    <div id="details">
+        <h1>CONTACT DETAILS</h1>
+        <h3>instagram ID</h3>
+        <div class="cboxes">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="">
+            <p>@arpanasharma1488</p>
+        </div>
+        <h3>Whatsapp No</h3>
+        <div class="cboxes">
+            <img src="https://cdn-icons.flaticon.com/png/512/3536/premium/3536445.png?token=exp=1653643257~hmac=af078030492e5659398adfd0de23e56c" alt="">
+            <p>6381715527</p>
+        </div>
+        <h3>Phone No</h3>
+        <div class="cboxes">
+            <img src="https://as2.ftcdn.net/v2/jpg/02/11/05/75/1000_F_211057513_l323AXbeZOVykooVsXmwDFWraOwJlV7N.jpg" alt="">
+            <p>6381715527</p>
+        </div>
+        <h3>Gmail</h3>
+        <div class="cboxes">
+            <img src="https://cdn-icons-png.flaticon.com/512/888/888853.png" alt="">
+            <p>a_sharma2@ce.iitr.ac.in or kumarikhushi544@gmail.com</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        var slide_index = 1;
+        displaySlides(slide_index);
+        function nextSlide(n) {
+            displaySlides(slide_index += n);
+        }
+        function currentSlide(n) {
+            displaySlides(slide_index = n);
+        }
+        function displaySlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("showSlide");
+            if (n > slides.length) { slide_index = 1 }
+            if (n < 1) { slide_index = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slide_index - 1].style.display = "block";
+        }  
+    </script>
+</body>
+
+</html>
